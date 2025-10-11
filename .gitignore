@@ -1,0 +1,123 @@
+# ======================
+# Python basics
+# ======================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+.history
+MANIFEST
+
+# ======================
+# Virtual environments
+# ======================
+.env/
+.venv/
+venv/
+ENV/
+env/
+.conda/
+*.conda
+
+# ======================
+# IDEs & Editors
+# ======================
+.vscode/
+.idea/
+*.code-workspace
+*.sublime-project
+*.sublime-workspace
+*.swp
+.DS_Store
+Thumbs.db
+
+# ======================
+# Jupyter & Notebooks
+# ======================
+.ipynb_checkpoints
+*.ipynb_checkpoints/
+profile_default/
+__pycache__/
+*.nbconvert.ipynb
+
+# ======================
+# Environment & Secrets
+# ======================
+# Never commit your keys or secrets!
+.env
+*.env
+.env.*
+secrets.json
+apikeys.json
+
+# ======================
+# Logs & Caches
+# ======================
+*.log
+logs/
+*.out
+*.err
+.cache/
+.pytest_cache/
+coverage.xml
+htmlcov/
+.coverage
+*.coverage
+nosetests.xml
+
+# ======================
+# Datasets / Large Files
+# ======================
+data/
+datasets/
+*.csv
+*.tsv
+*.jsonl
+*.sqlite
+*.db
+*.h5
+*.pkl
+*.pt
+*.bin
+
+# ======================
+# AI / LLM specific
+# ======================
+# Vector DBs and embeddings
+chroma/
+faiss_index/
+*.index
+*.npy
+
+# Model weights or fine-tuned models
+models/
+*.ckpt
+*.safetensors
+*.pth
+*.onnx
+
+# Cache from OpenAI / LangChain / HuggingFace
+.cache/
+.openai/
+langchain_store/
+huggingface_hub_cache/
+~$*
+
+# ======================
+# System files
+# ======================
+*.bak
+*.tmp
+*.swp
+*.lock
+*.pid
+*.gz
+*.zip
+*.tar
+*.tar.gz
