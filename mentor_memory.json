@@ -1,0 +1,15 @@
+[
+  {
+    "memory_id": "4ff1272b",
+    "timestamp": "2025-10-12T15:41:09.130183",
+    "problem_title": "Two Sum",
+    "user_code": "\ndef two_sum(nums, target):\n    for i in range(len(nums)):\n        for j in range(i+7, len(nums)):\n            if nums[i] + nums[j] == target:\n                return [i, j]\n",
+    "outcome": "partial",
+    "error_patterns": [
+      "off-by-one",
+      "complexity-misestimate"
+    ],
+    "notes": "[\n  {\n    \"issue\": \"off-by-one\",\n    \"confidence\": \"high\",\n    \"evidence\": \"the inner loop starts from i+7 instead of i+1\"\n  }\n]\n[\n  {\n    \"issue\": \"complexity-misestimate\",\n    \"confidence\": \"high\",\n    \"evidence\": \"brute-force approach leads to O(N^2) complexity, which is slow for large inputs\"\n  },\n  {\n    \"issue\": \"off-by-one\",\n    \"confidence\": \"medium\",\n    \"evidence\": \"loop starts at j=i+10 instead of j=i+1, missing potential pairs\"\n  }\n]",
+    "fix_attempts": 2
+  }
+]
