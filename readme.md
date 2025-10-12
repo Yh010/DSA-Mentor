@@ -1,5 +1,5 @@
 activate env:
- & "d:/Projects/DSA Mentor/.venv/Scripts/Activate.ps1
+.\.venv\Scripts\activate
 
 
  start lab:
