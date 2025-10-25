@@ -121,3 +121,4 @@ huggingface_hub_cache/
 *.zip
 *.tar
 *.tar.gz
+chroma_data/chroma.sqlite3
