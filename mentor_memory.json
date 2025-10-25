@@ -15,19 +15,21 @@
   },
   {
     "memory_id": "525afb23",
-    "timestamp": "2025-10-14T16:32:06.382268",
+    "timestamp": "2025-10-25T05:11:32.507605",
     "problem_title": "Remove Nth Node From End of List",
     "user_code": "\n/**\n * Definition for singly-linked list.\n * function ListNode(val, next) {\n *     this.val = (val===undefined ? 0 : val)\n *     this.next = (next===undefined ? null : next)\n * }\n */\n/**\n * @param {ListNode} head\n * @param {number} n\n * @return {ListNode}\n */\nvar removeNthFromEnd = function(head, n) {\n    if(head.next == null) return null ;\n\n    let temp = 0 ;\n\n    let slow = head , fast = head ;\n\n    while(temp < n && fast.next) {\n        fast = fast.next ;\n        temp++ ;\n    }\n\n    while(fa",
     "outcome": "partial",
     "error_patterns": [
+      "incorrect-initialization",
+      "edge-case-missed",
+      "wrong-base-case",
       "off-by-one",
       "missing-edge-case",
       "edge-case missed",
-      "wrong-base-case",
       "boundary-condition-error",
-      "incorrect-initialization"
+      "loop-termination"
     ],
-    "notes": "[\n  {\n    \"issue\": \"incorrect-initialization\",\n    \"confidence\": \"high\",\n    \"evidence\": \"not handling the removal of the head node properly.\"\n  },\n  {\n    \"issue\": \"missing-edge-case\",\n    \"confidence\": \"medium\",\n    \"evidence\": \"returns null if head.next is null, but does not account for removing the head itself.\"\n  },\n  {\n    \"issue\": \"off-by-one\",\n    \"confidence\": \"medium\",\n    \"evidence\": \"slow.next may not point to the correct node to remove.\"\n  }\n]\n[\n  {\n    \"issue\": \"off-by-one\",\n    \"confidence\": \"high\",\n    \"evidence\": \"The handling of the fast pointer might not effectively address the case when n equals the length of the list.\"\n  },\n  {\n    \"issue\": \"boundary-condition-error\",\n    \"confidence\": \"medium\",\n    \"evidence\": \"The initial check only handles when the linked list has one node.\"\n  }\n]\n[\n  {\n    \"issue\": \"missing-edge-case\",\n    \"confidence\": \"high\",\n    \"evidence\": \"Directly returning null without handling n equal to list length.\"\n  },\n  {\n    \"issue\": \"wrong-base-case\",\n    \"confidence\": \"medium\",\n    \"evidence\": \"The initial check for `head.next` may not cover the case of a single node.\"\n  }\n]\n[\n  {\n    \"issue\": \"off-by-one\",\n    \"confidence\": \"high\",\n    \"evidence\": \"the loop may not be correctly accounting for the Nth node when head is at the start.\"\n  },\n  {\n    \"issue\": \"edge-case missed\",\n    \"confidence\": \"high\",\n    \"evidence\": \"the conditional check for head.next could lead to incorrect behavior when n equals the length of the list.\"\n  }\n]\n[\n  {\n    \"issue\": \"missing-edge-case\",\n    \"confidence\": \"high\",\n    \"evidence\": \"returns null when head is a single node.\"\n  }\n]",
-    "fix_attempts": 5
+    "notes": "[\n  {\n    \"issue\": \"incorrect-initialization\",\n    \"confidence\": \"high\",\n    \"evidence\": \"not handling the removal of the head node properly.\"\n  },\n  {\n    \"issue\": \"missing-edge-case\",\n    \"confidence\": \"medium\",\n    \"evidence\": \"returns null if head.next is null, but does not account for removing the head itself.\"\n  },\n  {\n    \"issue\": \"off-by-one\",\n    \"confidence\": \"medium\",\n    \"evidence\": \"slow.next may not point to the correct node to remove.\"\n  }\n]\n[\n  {\n    \"issue\": \"off-by-one\",\n    \"confidence\": \"high\",\n    \"evidence\": \"The handling of the fast pointer might not effectively address the case when n equals the length of the list.\"\n  },\n  {\n    \"issue\": \"boundary-condition-error\",\n    \"confidence\": \"medium\",\n    \"evidence\": \"The initial check only handles when the linked list has one node.\"\n  }\n]\n[\n  {\n    \"issue\": \"missing-edge-case\",\n    \"confidence\": \"high\",\n    \"evidence\": \"Directly returning null without handling n equal to list length.\"\n  },\n  {\n    \"issue\": \"wrong-base-case\",\n    \"confidence\": \"medium\",\n    \"evidence\": \"The initial check for `head.next` may not cover the case of a single node.\"\n  }\n]\n[\n  {\n    \"issue\": \"off-by-one\",\n    \"confidence\": \"high\",\n    \"evidence\": \"the loop may not be correctly accounting for the Nth node when head is at the start.\"\n  },\n  {\n    \"issue\": \"edge-case missed\",\n    \"confidence\": \"high\",\n    \"evidence\": \"the conditional check for head.next could lead to incorrect behavior when n equals the length of the list.\"\n  }\n]\n[\n  {\n    \"issue\": \"missing-edge-case\",\n    \"confidence\": \"high\",\n    \"evidence\": \"returns null when head is a single node.\"\n  }\n]\n[\n  {\n    \"issue\": \"edge-case-missed\",\n    \"confidence\": \"high\",\n    \"evidence\": \"returns null when list has one element and n = 1\"\n  },\n  {\n    \"issue\": \"loop-termination\",\n    \"confidence\": \"medium\",\n    \"evidence\": \"fast.next may lead to premature termination\"\n  }\n]",
+    "fix_attempts": 6
   }
 ]
