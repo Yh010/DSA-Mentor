@@ -19,6 +19,7 @@ MANIFEST
 # ======================
 .env/
 .venv/
+.venv_dsa/
 venv/
 ENV/
 env/

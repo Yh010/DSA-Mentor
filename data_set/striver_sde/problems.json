@@ -75,5 +75,18 @@
         "code_brute_force": "function maxProfit(prices) {\n    let maxPro = 0;\n    for (let i = 0; i < prices.length; i++) {\n        for (let j = i + 1; j < prices.length; j++) {\n            if (prices[j] > prices[i]) {\n                maxPro = Math.max(maxPro, prices[j] - prices[i]);\n            }\n        }\n    }\n    return maxPro;\n}\n\nconst prices = [7, 1, 5, 3, 6, 4];\nconsole.log('Max profit is:', maxProfit(prices));",
         "code_better_approach": null,
         "code_optimized": "function maxProfit(prices) {\n    let maxPro = 0;\n    let minPrice = Infinity;\n\n    for (let price of prices) {\n        if (price < minPrice) {\n            minPrice = price;\n        } else {\n            maxPro = Math.max(maxPro, price - minPrice);\n        }\n    }\n\n    return maxPro;\n}\n\nconst prices = [7, 1, 5, 3, 6, 4];\nconsole.log('Max profit is:', maxProfit(prices));"
+    },
+    {
+        "problem_title": "Combination Sum II - Find all unique combinations",
+        "problem_statement": "Given a collection of candidate numbers (candidates) and a target number (target), find all unique combinations in candidates where the candidate numbers sum to target. Each number in candidates may only be used once in the combination. The solution set must not contain duplicate combinations.",
+        "difficulty": "Medium",
+        "topic": "Backtracking, Recursion",
+        "brute_force_explanation": "null",
+        "better_approach": null,
+        "optimized_explanation": "The approach uses recursion and backtracking with sorting to avoid duplicates. Sort the array first to make it easier to skip duplicate elements. Starting from index 0, recursively explore each candidate number. If the current number is greater than the remaining target, break the loop since all further elements will be greater. If the number can be part of the combination, include it and move to the next index with the updated target. Skip duplicate numbers to prevent repeating combinations. When the target reaches zero, add the current combination to the result list. This ensures all unique combinations are found.",
+        "key_idea": "Sort the array and use recursive backtracking to explore combinations while skipping duplicates to ensure uniqueness.",
+        "code_brute_force": null,
+        "code_better_approach": null,
+        "code_optimized": "function combinationSum2(candidates, target) {\n    candidates.sort((a, b) => a - b);\n    const res = [];\n\n    function backtrack(start, target, path) {\n        if (target === 0) {\n            res.push([...path]);\n            return;\n        }\n\n        for (let i = start; i < candidates.length; i++) {\n            if (i > start && candidates[i] === candidates[i - 1]) continue;\n            if (candidates[i] > target) break;\n\n            path.push(candidates[i]);\n            backtrack(i + 1, target - candidates[i], path);\n            path.pop();\n        }\n    }\n\n    backtrack(0, target, []);\n    return res;\n}\n\nconst candidates = [10, 1, 2, 7, 6, 1, 5];\nconst target = 8;\nconsole.log(combinationSum2(candidates, target));"
     }
 ]
